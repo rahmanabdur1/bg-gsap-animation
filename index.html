@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page" id="page1">
+      <div id="nav">
+        <h1>Booking</h1>
+  
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+        <h2>Sign Up</h2>
+      </div>
+      <div class="page2">
+        <div class="box">
+          <h2>Creative Studio</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae in
+            perferendis expedita repudiandae doloribus quaerat officia accusamus
+            voluptatem. Alias, soluta.
+          </p>
+        </div>
+        <div class="box">
+          <h2>Creative Studio</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae in
+            perferendis expedita repudiandae doloribus quaerat officia accusamus
+            voluptatem. Alias, soluta.
+          </p>
+        </div>
+        <div class="box">
+          <h2>Creative Studio</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae in
+            perferendis expedita repudiandae doloribus quaerat officia accusamus
+            voluptatem. Alias, soluta.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+
+    <script>
+      let tl = gsap.timeline();
+      let time = gsap.timeline();
+
+      tl.from("#nav h1, #nav ul li, #nav h2", {
+        y: -100,
+        delay: 0.7,
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.2,
+      });
+
+      gsap.from(".page2 .box", {
+        y: -100,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.4,
+        scrollTrigger: ".page2 .box",
+      });
+    </script>
+  </body>
+</html>
